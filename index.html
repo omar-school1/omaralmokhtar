@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الثانوية التأهيلية عمر المختار</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), url('background.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 15px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            background-color: #ffaa00;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .about {
+            padding: 50px 15px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .subjects {
+            padding: 50px 15px;
+        }
+
+        .subjects h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subject {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .subject h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subject .btn {
+            background-color: #004080;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quiz {
+            padding: 50px 15px;
+            text-align: center;
+            background-color: #f9f9f9;
+            display: none;
+        }
+
+        .quiz h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz button {
+            background-color: #004080;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quiz button:hover {
+            background-color: #ffaa00;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>الثانوية التأهيلية عمر المختار</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الموقع</a></li>
+                    <li><a href="#subjects">المواد</a></li>
+                    <li><a href="#quiz">الاختبار</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>اختبر فهمك واستعد للجهوي</h2>
+            <p>اكتشف مجموعة من الأسئلة لمساعدتك على المراجعة والتحضير للامتحانات الجهوية.</p>
+            <a href="#subjects" class="btn">ابدأ الآن</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>عن الموقع</h2>
+            <p>هذا الموقع مُصمم لطلاب السنة الأولى بكالوريا في المدارس العمومية المغربية. يقدم مجموعة من الاختبارات في مواد التربية الإسلامية، اللغة العربية، الفرنسية، والاجتماعيات. الهدف هو تسهيل المراجعة وتعزيز الفهم.</p>
+        </div>
+    </section>
+
+    <section id="subjects" class="subjects">
+        <div class="container">
+            <h2>المواد الدراسية</h2>
+            <div class="subject-grid">
+                <div class="subject">
+                    <h3>التربية الإسلامية</h3>
+                    <button class="btn" onclick="startQuiz('islamic')">ابدأ الاختبار</button>
+                </div>
+                <div class="subject">
+                    <h3>اللغة العربية</h3>
+                    <button class="btn" onclick="startQuiz('arabic')">ابدأ الاختبار</button>
+                </div>
+                <div class="subject">
+                    <h3>اللغة الفرنسية</h3>
+                    <button class="btn" onclick="startQuiz('french')">ابدأ الاختبار</button>
+                </div>
+                <div class="subject">
+                    <h3>الاجتماعيات</h3>
+                    <button class="btn" onclick="startQuiz('history')">ابدأ الاختبار</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="quiz">
+        <div class="container">
+            <h2>اختبار سريع</h2>
+            <div id="question-container">
+                <!-- الأسئلة يتم توليدها ديناميكياً هنا -->
+            </div>
+            <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 الثانوية التأهيلية عمر المختار. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        const questions = {
+            islamic: [
+                { question: "ما هي أركان الإسلام؟", options: ["الشهادتان والصلاة والصوم والزكاة والحج", "الصلاة والصوم فقط", "الحج فقط"], answer: 0 },
+                { question: "كم عدد ركعات صلاة الفجر؟", options: ["2", "3", "4"], answer: 0 }
+            ],
+            arabic: [
+                { question: "ما هو الاسم المقصور؟", options: ["اسم ينتهي بألف لازمة", "اسم ينتهي بياء", "اسم ينتهي بتاء"], answer: 0 },
+                { question: "ما هو الممنوع من الصرف؟", options: ["اسم لا يُنوّن", "اسم يُنوّن", "فعل لا يُصرف"], answer: 0 }
+            ],
+            french: [
+                { question: "Quelle est la capitale de la France?", options: ["Paris", "Lyon", "Marseille"], answer: 0 },
+                { question: "Comment dit-on 'chat' en français?", options: ["Dog", "Cat", "Mouse"], answer: 1 }
+            ],
+            history: [
+                { question: "متى حصل المغرب على الاستقلال؟", options: ["1956", "1960", "1945"], answer: 0 },
+                { question: "من هو مؤسس الدولة العلوية؟", options: ["إدريس الأول", "محمد بن عبد الله", "مولاي علي الشريف"], answer: 2 }
+            ]
+        };
+
+        let currentSubject = "";
+        let currentQuestionIndex = 0;
+
+        function startQuiz(subject) {
+            currentSubject = subject;
+            currentQuestionIndex = 0;
+            displayQuestion();
+            const quizSection = document.getElementById('quiz');
+            quizSection.style.display = 'block';
+            document.getElementById('feedback').textContent = '';
+            window.location.href = '#quiz';
+        }
+
+        function displayQuestion() {
+            const container = document.getElementById('question-container');
+            container.innerHTML = ""; // مسح الأسئلة السابقة
+
+            const questionData = questions[currentSubject][currentQuestionIndex];
+            const questionEl = document.createElement('div');
+            questionEl.className = 'question';
+
+            const questionText = document.createElement('h3');
+            questionText.textContent = questionData.question;
+            questionEl.appendChild(questionText);
+
+            questionData.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.onclick = () => checkAnswer(index);
+                questionEl.appendChild(button);
+            });
+
+            container.appendChild(questionEl);
+        }
+
+        function checkAnswer(selectedIndex) {
+            const feedback = document.getElementById('feedback');
+            const questionData = questions[currentSubject][currentQuestionIndex];
+
+            if (selectedIndex === questionData.answer) {
+                feedback.textContent = 'إجابة صحيحة! أحسنت!';
+                feedback.style.color = 'green';
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex < questions[currentSubject].length) {
+                    setTimeout(displayQuestion, 1000);
+                } else {
+                    feedback.textContent = 'أكملت الاختبار بنجاح!';
+                }
+            } else {
+                feedback.textContent = 'إجابة خاطئة. حاول مرة أخرى.';
+                feedback.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
