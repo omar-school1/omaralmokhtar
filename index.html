@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الثانوية التأهيلية عمر المختار</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -128,32 +129,6 @@
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .quiz {
-            padding: 50px 15px;
-            text-align: center;
-            background-color: #f9f9f9;
-            display: none;
-        }
-
-        .quiz h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .quiz button {
-            background-color: #004080;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .quiz button:hover {
-            background-color: #ffaa00;
         }
 
         footer {
@@ -179,7 +154,7 @@
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#about">عن الموقع</a></li>
                     <li><a href="#subjects">المواد</a></li>
-                    <li><a href="#quiz">الاختبار</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
             </nav>
         </div>
@@ -206,31 +181,21 @@
             <div class="subject-grid">
                 <div class="subject">
                     <h3>التربية الإسلامية</h3>
-                    <button class="btn" onclick="startQuiz('islamic')">ابدأ الاختبار</button>
+                    <a href="#" class="btn">ابدأ الاختبار</a>
                 </div>
                 <div class="subject">
                     <h3>اللغة العربية</h3>
-                    <button class="btn" onclick="startQuiz('arabic')">ابدأ الاختبار</button>
+                    <a href="#" class="btn">ابدأ الاختبار</a>
                 </div>
                 <div class="subject">
                     <h3>اللغة الفرنسية</h3>
-                    <button class="btn" onclick="startQuiz('french')">ابدأ الاختبار</button>
+                    <a href="#" class="btn">ابدأ الاختبار</a>
                 </div>
                 <div class="subject">
                     <h3>الاجتماعيات</h3>
-                    <button class="btn" onclick="startQuiz('history')">ابدأ الاختبار</button>
+                    <a href="#" class="btn">ابدأ الاختبار</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="quiz" class="quiz">
-        <div class="container">
-            <h2>اختبار سريع</h2>
-            <div id="question-container">
-                <!-- الأسئلة يتم توليدها ديناميكياً هنا -->
-            </div>
-            <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
         </div>
     </section>
 
@@ -239,81 +204,5 @@
             <p>&copy; 2025 الثانوية التأهيلية عمر المختار. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
-
-    <script>
-        const questions = {
-            islamic: [
-                { question: "ما هي أركان الإسلام؟", options: ["الشهادتان والصلاة والصوم والزكاة والحج", "الصلاة والصوم فقط", "الحج فقط"], answer: 0 },
-                { question: "كم عدد ركعات صلاة الفجر؟", options: ["2", "3", "4"], answer: 0 }
-            ],
-            arabic: [
-                { question: "ما هو الاسم المقصور؟", options: ["اسم ينتهي بألف لازمة", "اسم ينتهي بياء", "اسم ينتهي بتاء"], answer: 0 },
-                { question: "ما هو الممنوع من الصرف؟", options: ["اسم لا يُنوّن", "اسم يُنوّن", "فعل لا يُصرف"], answer: 0 }
-            ],
-            french: [
-                { question: "Quelle est la capitale de la France?", options: ["Paris", "Lyon", "Marseille"], answer: 0 },
-                { question: "Comment dit-on 'chat' en français?", options: ["Dog", "Cat", "Mouse"], answer: 1 }
-            ],
-            history: [
-                { question: "متى حصل المغرب على الاستقلال؟", options: ["1956", "1960", "1945"], answer: 0 },
-                { question: "من هو مؤسس الدولة العلوية؟", options: ["إدريس الأول", "محمد بن عبد الله", "مولاي علي الشريف"], answer: 2 }
-            ]
-        };
-
-        let currentSubject = "";
-        let currentQuestionIndex = 0;
-
-        function startQuiz(subject) {
-            currentSubject = subject;
-            currentQuestionIndex = 0;
-            displayQuestion();
-            const quizSection = document.getElementById('quiz');
-            quizSection.style.display = 'block';
-            document.getElementById('feedback').textContent = '';
-            window.location.href = '#quiz';
-        }
-
-        function displayQuestion() {
-            const container = document.getElementById('question-container');
-            container.innerHTML = ""; // مسح الأسئلة السابقة
-
-            const questionData = questions[currentSubject][currentQuestionIndex];
-            const questionEl = document.createElement('div');
-            questionEl.className = 'question';
-
-            const questionText = document.createElement('h3');
-            questionText.textContent = questionData.question;
-            questionEl.appendChild(questionText);
-
-            questionData.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.textContent = option;
-                button.onclick = () => checkAnswer(index);
-                questionEl.appendChild(button);
-            });
-
-            container.appendChild(questionEl);
-        }
-
-        function checkAnswer(selectedIndex) {
-            const feedback = document.getElementById('feedback');
-            const questionData = questions[currentSubject][currentQuestionIndex];
-
-            if (selectedIndex === questionData.answer) {
-                feedback.textContent = 'إجابة صحيحة! أحسنت!';
-                feedback.style.color = 'green';
-                currentQuestionIndex++;
-
-                if (currentQuestionIndex < questions[currentSubject].length) {
-                    setTimeout(displayQuestion, 1000);
-                } else {
-                    feedback.textContent = 'أكملت الاختبار بنجاح!';
-                }
-            } else {
-                feedback.textContent = 'إجابة خاطئة. حاول مرة أخرى.';
-                feedback.style.color = 'red';
-            }
-        }
-    </script>
 </body>
 </html>
