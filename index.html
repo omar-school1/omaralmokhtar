@@ -1,4 +1,4 @@
-html
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -231,8 +231,9 @@ html
     <section id="quiz" class="quiz">
         <div class="container">
             <h2>اختبار سريع</h2>
+            <div id="question-number" style="font-size: 1.2rem; margin-bottom: 20px;"></div>
             <div id="question-container">
-                <!-- الأسئلة يتم توليدها ديناميكياً هنا -->
+                <!-• الأسئلة يتم توليدها ديناميكياً هنا -->
             </div>
             <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
         </div>
@@ -309,6 +310,10 @@ html
         function displayQuestion() {
             const container = document.getElementById('question-container');
             container.innerHTML = ""; // مسح الأسئلة السابقة
+            
+            // عرض رقم السؤال
+            const questionNumber = document.getElementById('question-number');
+            questionNumber.textContent = `السؤال ${currentQuestionIndex + 1} من ${questions[currentSubject].length}`;
 
             const questionData = questions[currentSubject][currentQuestionIndex];
             const questionEl = document.createElement('div');
