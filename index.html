@@ -1,4 +1,4 @@
-
+html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -172,6 +172,12 @@
             margin: 0;
             font-size: 0.9rem;
         }
+
+        .incorrect-questions {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
     </style>
 </head>
 <body>
@@ -230,12 +236,17 @@
 
     <section id="quiz" class="quiz">
         <div class="container">
-            <h2>اختبار سريع</h2>
+            <h2 id="quiz-title">مدخل التزكية</h2> <!-- عنوان مدخل التزكية -->
+            <h3>اختبار سريع</h3>
             <div id="question-number" style="font-size: 1.2rem; margin-bottom: 20px;"></div>
             <div id="question-container">
-                <!-• الأسئلة يتم توليدها ديناميكياً هنا -->
+                <!-- الأسئلة يتم توليدها ديناميكياً هنا -->
             </div>
             <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
+            <div class="incorrect-questions" id="incorrect-questions" style="display: none;">
+                <h3>الأسئلة التي أخطأت فيها:</h3>
+                <ul id="incorrect-questions-list"></ul>
+            </div>
         </div>
     </section>
 
@@ -292,18 +303,42 @@
                 { question: "بين دور الإيمان بالغيب في عمارة الأرض.", options: ["للإيمان دور كبير في عمارة الأرض، حيث يجازى العبد على كل فعل سليم.", "الإيمان لا يؤثر على عمارة الأرض.", "الإيمان يسبب الإهمال.", "عمارة الأرض ليست من واجبات المؤمن."], answer: 0 },
                 { question: "حدد أثرين للإيمان بالغيب في الحد من امتهان التسول.", options: ["يميل إلى القناعة والجد، يستحضر رقابته.", "الإيمان يزيد من التسول.", "الإيمان لا يؤثر على السلوك.", "التسول يعتبر عملاً مشروعاً."], answer: 0 },
             ],
+            arabic: [
+                // أضف الأسئلة الخاصة باللغة العربية هنا
+                // مثال:
+                { question: "السؤال 1 باللغة العربية.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
+                // استمر في إضافة المزيد من الأسئلة
+            ],
+            french: [
+                // أضف الأسئلة الخاصة باللغة الفرنسية هنا
+                // مثال:
+                { question: "السؤال 1 باللغة الفرنسية.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
+                // استمر في إضافة المزيد من الأسئلة
+            ],
+            history: [
+                // أضف الأسئلة الخاصة بالاجتماعيات هنا
+                // مثال:
+                { question: "السؤال 1 في الاجتماعيات.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
+                // استمر في إضافة المزيد من الأسئلة
+            ]
         };
 
         let currentSubject = "";
         let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+        let incorrectQuestions = [];
 
         function startQuiz(subject) {
             currentSubject = subject;
             currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            incorrectQuestions = [];
             displayQuestion();
             const quizSection = document.getElementById('quiz');
             quizSection.style.display = 'block';
             document.getElementById('feedback').textContent = '';
+            document.getElementById('incorrect-questions').style.display = 'none'; // إخفاء قائمة الأسئلة الخاطئة
+            document.getElementById('incorrect-questions-list').innerHTML = ''; // مسح قائمة الأسئلة الخاطئة
             window.location.href = '#quiz';
         }
 
@@ -340,16 +375,37 @@
             if (selectedIndex === questionData.answer) {
                 feedback.textContent = 'إجابة صحيحة! أحسنت!';
                 feedback.style.color = 'green';
-                currentQuestionIndex++;
-
-                if (currentQuestionIndex < questions[currentSubject].length) {
-                    setTimeout(displayQuestion, 1000);
-                } else {
-                    feedback.textContent = 'أكملت الاختبار بنجاح!';
-                }
+                correctAnswersCount++;
             } else {
                 feedback.textContent = 'إجابة خاطئة. حاول مرة أخرى.';
                 feedback.style.color = 'red';
+                incorrectQuestions.push({ question: questionData.question, correctAnswer: questionData.options[questionData.answer] }); // إضافة السؤال الخاطئ إلى القائمة
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions[currentSubject].length) {
+                setTimeout(displayQuestion, 1000);
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            const feedback = document.getElementById('feedback');
+            feedback.innerHTML = `أكملت الاختبار بنجاح!<br>عدد الإجابات الصحيحة: ${correctAnswersCount} من ${questions[currentSubject].length}<br>`;
+            
+            if (incorrectQuestions.length > 0) {
+                feedback.innerHTML += `الأسئلة التي أخطأت فيها:<br>`;
+                const incorrectList = document.getElementById('incorrect-questions-list');
+                incorrectQuestions.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.question} - الجواب الصحيح: ${item.correctAnswer}`;
+                    incorrectList.appendChild(listItem);
+                });
+                document.getElementById('incorrect-questions').style.display = 'block'; // إظهار قائمة الأسئلة الخاطئة
+            } else {
+                feedback.innerHTML += "لم تخطئ في أي سؤال!";
             }
         }
     </script>
