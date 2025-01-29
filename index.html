@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -209,56 +208,136 @@ html
             <p>هذا الموقع مُصمم لطلاب السنة الأولى بكالوريا في المدارس العمومية المغربية. يقدم مجموعة من الاختبارات في مواد التربية الإسلامية، اللغة العربية، الفرنسية، والاجتماعيات. الهدف هو تسهيل المراجعة وتعزيز الفهم.</p>
         </div>
     </section>
+<section id="subjects" class="subjects">
+    <div class="container">
+        <h2>المواد الدراسية</h2>
+        <div class="subject-grid">
+            <!-- مادة التربية الإسلامية -->
+            <div class="subject">
+                <h3>التربية الإسلامية</h3>
+                <button class="btn" onclick="toggleTeacherChoice('islamic')">ابدأ الاختبار</button>
+                <div id="teacher-choice-islamic" style="display:none;">
+                    <button class="btn" onclick="showOptions('islamic-hakim')">أستاذ حكيم عاطف</button>
+                    <button class="btn" onclick="showOptions('islamic-nabil')">أستاذ نبيل حمدوش</button>
+                </div>
+                <div id="teacher-options-islamic-hakim" style="display:none;">
+                    <button class="btn" onclick="startQuiz('islamic-hakim-introduction')">مدخل التزكية</button>
+                    <button class="btn" onclick="startQuiz('islamic-hakim-imitating')">مدخل الاقتداء</button>
+                    <button class="btn" onclick="startQuiz('islamic-hakim-response')">مدخل الاستجابة</button>
+                    <button class="btn" onclick="startQuiz('islamic-hakim-wisdom')">مدخل الحكمة والقسط</button>
+                </div>
+                <div id="teacher-options-islamic-nabil" style="display:none;">
+                    <button class="btn" onclick="startQuiz('islamic-nabil-introduction')">مدخل التزكية</button>
+                    <button class="btn" onclick="startQuiz('islamic-nabil-justice')">القسط والحكمة</button>
+                    <button class="btn" onclick="startQuiz('islamic-nabil-respond')">مدخل الاستجابة</button>
+                    <button class="btn" onclick="startQuiz('islamic-nabil-imitating')">مدخل الاقتداء</button>
+                </div>
+            </div>
 
-    <section id="subjects" class="subjects">
-        <div class="container">
-            <h2>المواد الدراسية</h2>
-            <div class="subject-grid">
-                <div class="subject">
-                    <h3>التربية الإسلامية</h3>
-                    <button class="btn" onclick="startQuiz('islamic')">ابدأ الاختبار</button>
+            <!-- مادة اللغة العربية -->
+            <div class="subject">
+                <h3>اللغة العربية</h3>
+                <button class="btn" onclick="toggleTeacherChoice('arabic')">ابدأ الاختبار</button>
+                <div id="teacher-choice-arabic" style="display:none;">
+                    <button class="btn" onclick="showOptions('arabic-aisha')">أستاذة عائشة</button>
+                    <button class="btn" onclick="showOptions('arabic-fatima')">أستاذة فاطمة</button>
                 </div>
-                <div class="subject">
-                    <h3>اللغة العربية</h3>
-                    <button class="btn" onclick="startQuiz('arabic')">ابدأ الاختبار</button>
+                <div id="teacher-options-arabic-aisha" style="display:none;">
+                    <button class="btn" onclick="startQuiz('arabic-aisha-science')">علوم اللغة</button>
                 </div>
-                <div class="subject">
-                    <h3>اللغة الفرنسية</h3>
-                    <button class="btn" onclick="startQuiz('french')">ابدأ الاختبار</button>
+                <div id="teacher-options-arabic-fatima" style="display:none;">
+                    <button class="btn" onclick="startQuiz('arabic-fatima-literature')">الأدب العربي</button>
                 </div>
-                <div class="subject">
-                    <h3>الاجتماعيات</h3>
-                    <button class="btn" onclick="startQuiz('history')">ابدأ الاختبار</button>
+            </div>
+
+            <!-- مادة الاجتماعيات -->
+            <div class="subject">
+                <h3>الاجتماعيات</h3>
+                <button class="btn" onclick="toggleTeacherChoice('social')">ابدأ الاختبار</button>
+                <div id="teacher-choice-social" style="display:none;">
+                    <button class="btn" onclick="showOptions('social-aisha')">أستاذة عائشة</button>
+                    <button class="btn" onclick="showOptions('social-fatima')">أستاذة فاطمة</button>
+                </div>
+                <div id="teacher-options-social-aisha" style="display:none;">
+                    <button class="btn" onclick="startQuiz('social-aisha-history')">تاريخ</button>
+                    <button class="btn" onclick="startQuiz('social-aisha-geography')">جغرافيا</button>
+                </div>
+                <div id="teacher-options-social-fatima" style="display:none;">
+                    <button class="btn" onclick="startQuiz('social-fatima-sociology')">سوسيولوجيا</button>
+                </div>
+            </div>
+
+            <!-- مادة الفرنسية -->
+            <div class="subject">
+                <h3>اللغة الفرنسية</h3>
+                <button class="btn" onclick="toggleTeacherChoice('french')">ابدأ الاختبار</button>
+                <div id="teacher-choice-french" style="display:none;">
+                    <button class="btn" onclick="showOptions('french-aisha')">أستاذة عائشة</button>
+                    <button class="btn" onclick="showOptions('french-fatima')">أستاذة فاطمة</button>
+                </div>
+                <div id="teacher-options-french-aisha" style="display:none;">
+                    <button class="btn" onclick="startQuiz('french-aisha-vocabulary')">مفردات</button>
+                    <button class="btn" onclick="startQuiz('french-aisha-conjugation')">تصريف الأفعال</button>
+                </div>
+                <div id="teacher-options-french-fatima" style="display:none;">
+                    <button class="btn" onclick="startQuiz('french-fatima-comprehension')">فهم النصوص</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="quiz" class="quiz">
-        <div class="container">
-            <h2 id="quiz-title">مدخل التزكية</h2> <!-- عنوان مدخل التزكية -->
-            <h3>اختبار سريع</h3>
-            <div id="question-number" style="font-size: 1.2rem; margin-bottom: 20px;"></div>
-            <div id="question-container">
-                <!-- الأسئلة يتم توليدها ديناميكياً هنا -->
-            </div>
-            <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
-            <div class="incorrect-questions" id="incorrect-questions" style="display: none;">
-                <h3>الأسئلة التي أخطأت فيها:</h3>
-                <ul id="incorrect-questions-list"></ul>
-            </div>
-        </div>
-    </section>
+<section id="quiz" class="quiz" style="display:none;">
+    <div class="container">
+        <h2 id="quiz-title">اختبر فهمك</h2>
+        <p id="question-number" style="font-size: 1.5rem; font-weight: bold;"></p>
+        <div id="question-container"></div>
+        <p id="feedback" style="margin-top: 20px; font-size: 1.2rem;"></p>
+        <div id="incorrect-answers" style="margin-top: 20px;"></div>
+        <button id="retry-button" style="display:none;" onclick="retryQuiz()">إعادة المحاولة</button>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 الثانوية التأهيلية عمر المختار. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+<script>
+    let currentSubject = "";
+    let currentQuestionIndex = 0;
+    let incorrectAnswers = [];
+    // إظهار أو إخفاء نافذة خيارات الأستاذ عند الحاجة
+    function toggleTeacherChoice(subject) {
+        var teacherChoice = document.getElementById('teacher-choice-' + subject);
+        closeAllTeacherChoices();
 
-    <script>
-        const questions = {
-            islamic: [
+        if (teacherChoice.style.display === 'none') {
+            teacherChoice.style.display = 'block';
+        } else {
+            teacherChoice.style.display = 'none';
+        }
+    }
+
+    // إظهار خيارات الأساتذة بناءً على المادة والأستاذ
+    function showOptions(teacherSubject) {
+        closeAllTeacherChoices();
+        var teacherOptions = document.getElementById('teacher-options-' + teacherSubject);
+        teacherOptions.style.display = 'block';
+    }
+
+    // إغلاق جميع الخانات المفتوحة
+    function closeAllTeacherChoices() {
+        var teacherChoices = document.querySelectorAll('[id^="teacher-choice-"]');
+        var teacherOptions = document.querySelectorAll('[id^="teacher-options-"]');
+        
+        teacherChoices.forEach(function(choice) {
+            choice.style.display = 'none';
+        });
+
+        teacherOptions.forEach(function(option) {
+            option.style.display = 'none';
+        });
+    }
+
+    // تعريف الأسئلة الخاصة بكل مادة وأستاذ
+    const questions = {
+        "islamic-hakim-introduction":[
                 { question: "الإيمان هو التصديق القطعي بالله، ويكفي فيه التصديق اللساني المرتبط بالنية دون أن يظهر على الأفعال.", options: ["صحيح", "خطأ، الإيمان هو التصديق القطعي بالله، إقرارا باللسان، وتصديقا كاملا بالقلب، وعملا بالجوارح.", "خطأ، الإيمان يعني فقط الإيمان القلبي.", "خطأ، الإيمان يعتمد فقط على الأفعال."], answer: 1 },
                 { question: "حقيقة الإيمان تكمن في البوح بها للناس، وإخبارهم بذلك حتى يعلموا بأنك مؤمن بالله وحده لا شريك له.", options: ["صحيح", "خطأ، وتتجلى حقيقة الإيمان في الصلة الوثيقة بين القول والفعل.", "خطأ، الإيمان لا يحتاج لإخبار الآخرين.", "خطأ، الإيمان هو حالة خاصة بين العبد وربه."], answer: 1 },
                 { question: "من جماليات الإيمان أنه لا شروط له، يكفي فيه التعبير عن رغبة الانتساب لهذا الدين وكفى.", options: ["صحيح", "خطأ، للتحقق بالإيمان لابد من الحفاظ على أركانه الستة.", "خطأ، الإيمان مرتبط بنية القلب فقط.", "خطأ، يكفي أن تردد الشهادتين فقط."], answer: 1 },
@@ -302,112 +381,631 @@ html
                 { question: "أبرز أثر المنهج الفلسفي الموضوعي في ترسيخ الإيمان؟", options: ["يلعب دوراً في النظر والتأمل في آيات الله.", "يؤدي إلى الشك في الإيمان.", "يبتعد عن الدين.", "يسبب الانغلاق الفكري."], answer: 0 },
                 { question: "بين دور الإيمان بالغيب في عمارة الأرض.", options: ["للإيمان دور كبير في عمارة الأرض، حيث يجازى العبد على كل فعل سليم.", "الإيمان لا يؤثر على عمارة الأرض.", "الإيمان يسبب الإهمال.", "عمارة الأرض ليست من واجبات المؤمن."], answer: 0 },
                 { question: "حدد أثرين للإيمان بالغيب في الحد من امتهان التسول.", options: ["يميل إلى القناعة والجد، يستحضر رقابته.", "الإيمان يزيد من التسول.", "الإيمان لا يؤثر على السلوك.", "التسول يعتبر عملاً مشروعاً."], answer: 0 },
-            ],
-            arabic: [
-                // أضف الأسئلة الخاصة باللغة العربية هنا
-                // مثال:
-                { question: "السؤال 1 باللغة العربية.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
-                // استمر في إضافة المزيد من الأسئلة
-            ],
-            french: [
-                // أضف الأسئلة الخاصة باللغة الفرنسية هنا
-                // مثال:
-                { question: "السؤال 1 باللغة الفرنسية.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
-                // استمر في إضافة المزيد من الأسئلة
-            ],
-            history: [
-                // أضف الأسئلة الخاصة بالاجتماعيات هنا
-                // مثال:
-                { question: "السؤال 1 في الاجتماعيات.", options: ["جواب 1", "جواب 2", "جواب 3", "جواب 4"], answer: 0 },
-                // استمر في إضافة المزيد من الأسئلة
-            ]
-        };
+        ],
+        "islamic-hakim-imitating": [
+            {"question": "صلح الحديبية تم بين المسلمين وكفار قريش بمكان قرب المدينة اسمه الحديبية.",
+        "options": ["صحيح", "خطأ، صلح الحديبية تم بين المسلمين وكفار قريش بمكان قرب مكة اسمه الحديبية.", "خطأ، صلح الحديبية تم بين المسلمين واليهود قرب مكة."],
+        "answer": 1
+    },
+    { 
+        "question": "صلح الحديبية تم في شهر ذي الحجة سنة 5 للهجرة.",
+        "options": ["صحيح", "خطأ، صلح الحديبية تم في شهر ذي القعدة سنة 6 للهجرة.", "خطأ، صلح الحديبية تم في شهر رجب سنة 5 للهجرة."],
+        "answer": 1
+    },
+    { 
+        "question": "سبب صلح الحديبية أن رسول الله صلى الله عليه وسلم رأى رؤيا في المنام (وهو بالمدينة) أنه دخل هو وأصحابه المسجد الحرام.",
+        "options": ["نعم صحيح", "خطأ، بل كان السبب دعوة من كفار قريش للصلح.", "خطأ، السبب كان لحماية المسلمين من الأذى في مكة."],
+        "answer": 0
+    },
+    { 
+        "question": "خرج الرسول صلى الله عليه وسلم يريد العمرة ومعه 1400 من الصحابة مسلحين للحرب.",
+        "options": ["صحيح", "خطأ، خرج الرسول صلى الله عليه وسلم، يريد العمرة ومعه 1400 من الصحابة بشكل سلمي لا غرض لهم في الحرب.", "خطأ، بل خرج ومعه 1000 من الصحابة فقط."],
+        "answer": 1
+    },
+    { 
+        "question": "ذكر زملائك بثلاث بنود لصلح الحديبية:",
+        "options": ["هدنة بين الطرفين لمدة 10 سنوات.", "دخول المسلمين لمكة في نفس العام.", "منع المسلمين من دخول مكة نهائيًا."],
+        "answer": 0
+    },
+    { 
+        "question": "بعث الرسول صلى الله عليه وسلم علي بن أبي طالب رضي الله عنه إلى أهل مكة قصد إخبارهم بقدوم المسلمين.",
+        "options": ["صحيح", "خطأ، بل أرسل عثمان بن عفان رضي الله عنه.", "خطأ، بل أرسل عمر بن الخطاب رضي الله عنه."],
+        "answer": 1
+    },
+    { 
+        "question": "وقع خلاف في التفاوض حول بعض البنود، وحول صياغة كتابة عقد المعاهدة.",
+        "options": ["صحيح", "خطأ، كانت المعاهدة صريحة بدون أي اعتراض.", "خطأ، تم الاتفاق على كل شيء بسهولة."],
+        "answer": 0
+    },
+    { 
+        "question": "أشيع خبر مقتل علي بين المسلمين مما تولد عنه غزوة الرضوان.",
+        "options": ["صحيح", "خطأ، أشيع خبر مقتل عثمان بن عفان رضي الله عنه.", "خطأ، أشيع خبر مقتل النبي صلى الله عليه وسلم."],
+        "answer": 1
+    },
+    { 
+        "question": "دعا الرسول صلى الله عليه وسلم المسلمين للبيعة، فاستجابوا وبايعوه تحت الشجرة بيعة الرضوان.",
+        "options": ["صحيح", "خطأ، لم يكن هناك بيعة تحت الشجرة.", "خطأ، البيعة تمت في المدينة."],
+        "answer": 0
+    },
+    { 
+        "question": "علمت قريش بأمر البيعة، فأرسلت أبا سفيان لعقد الصلح.",
+        "options": ["صحيح", "خطأ، بل أرسلت قريش سهيل بن عمروا ليفاوض حول الصلح.", "خطأ، أرسلت عمر بن الخطاب للتفاوض."],
+        "answer": 1
+    },
+    { 
+        "question": "من نتائج صلح الحديبية: تفرغ الرسول صلى الله عليه وسلم لنشر الإسلام وهو خائف من كفار قريش.",
+        "options": ["صحيح", "خطأ، تفرغ الرسول لنشر الإسلام دون خوف.", "خطأ، تفرغ الرسول لنشر الإسلام ولكن كان خائفًا."],
+        "answer": 1
+    },
+    { 
+        "question": "من نتائج صلح الحديبية: إسلام ثلاثة من أعظم قادة مكة (خالد بن الوليد، وعمرو بن العاص، وعثمان بن أبي طلحة).",
+        "options": ["صحيح", "خطأ، لم يعتنق أحد من قادة مكة الإسلام.", "خطأ، هؤلاء لم يعتنقوا الإسلام بعد صلح الحديبية."],
+        "answer": 0
+    },
+    { 
+        "question": "من نتائج صلح الحديبية: عودة مهاجري الحبشة إلى المدينة المنورة.",
+        "options": ["صحيح", "خطأ، لم يعودوا إلا بعد الفتح.", "خطأ، لم يعودوا أبدًا."],
+        "answer": 0
+    },
+    { 
+        "question": "من نتائج صلح الحديبية: خروج أعداد كثيرة من العرب عن الدين الإسلامي.",
+        "options": ["صحيح", "خطأ، بل دخول أعداد كبيرة للإسلام.", "خطأ، لا شيء تغير بعد الصلح."],
+        "answer": 1
+    },
+    { 
+        "question": "فتح مكة أو الفتح الأعظم كان في 30 رمضان سنة 7 للهجرة.",
+        "options": ["صحيح", "خطأ، كان في 20 رمضان سنة 8 للهجرة.", "خطأ، كان في 10 رمضان سنة 8 للهجرة."],
+        "answer": 1
+    },
+    { 
+        "question": "سبب فتح مكة هو أن قريشًا نقضت صلح الحديبية، وذلك عندما أمدت خزاعة بالمال والسلاح للاعتداء على بني بكر، فقتلت منهم نحو 20 رجلًا، فغضب الرسول صلى الله عليه وسلم لذلك، وتجهز لقتال قريش.",
+        "options": ["صحيح", "خطأ، بل أمدت بني بكر ضد خزاعة.", "خطأ، السبب كان خلافات داخل مكة نفسها."],
+        "answer": 1
+    },
+    { 
+        "question": "خرج الرسول صلى الله عليه وسلم إلى المدينة، ومعه 10 آلاف مقاتل ومحاولته إخفاء الأمر حتى يباغت المشركين تجنبًا لسفك الدماء في مكة.",
+        "options": ["صحيح", "خطأ، خرج من المدينة إلى مكة.", "خطأ، خرج إلى المدينة وليس مكة."],
+        "answer": 1
+    },
+    { 
+        "question": "إسلام أبا سفيان وكل مشركي قريش دون حرب.",
+        "options": ["صحيح", "خطأ، إسلام أبا سفيان وبعض مشركي قريش.", "خطأ، لم يسلم أحد من مشركي قريش."],
+        "answer": 1
+    },
+    { 
+        "question": "توجه الرسول صلى الله عليه وسلم إلى الحرم، وطوافه بالكعبة، وأمره بتحطيم الأصنام (حوالي 360 صنم) التي كانت داخلها.",
+        "options": ["صحيح", "خطأ، لم يتم تحطيم أي أصنام.", "خطأ، تم تحطيم 100 صنم فقط."],
+        "answer": 0
+    },
+    { 
+        "question": "من نتائج فتح مكة: اعتناق بعض كبار قريش دين الإسلام، ومنهم: أبو سفيان، وزوجه هند بنت عتبة، وأبو قحافة والد أبي بكر الصديق.",
+        "options": ["صحيح", "خطأ، لم يعتنق أحد من كبار قريش الإسلام.", "خطأ، اعتنقوا الإسلام بعد الفتح بفترة طويلة."],
+        "answer": 0
+    },
+    { 
+        "question": "من نتائج فتح مكة: زيادة إيمان المؤمنين بتحقق رؤيا رسول الله صلى الله عليه وسلم وتمكن المسلمين من دخول البيت الحرام والطواف به.",
+        "options": ["صحيح", "خطأ، لم يزداد إيمان المؤمنين بعد الفتح.", "خطأ، لم يدخل المسلمون البيت الحرام إلا بعد فترة."],
+        "answer": 0
+    },
+    { 
+        "question": "من نتائج فتح مكة: إعدام الرسول صلى الله عليه وسلم لكل من اعتدى على المسلمين.",
+        "options": ["صحيح", "خطأ، بل عفى عنهم وقال: \"اذهبوا فأنتم الطلقاء.\"", "خطأ، تم إعدام البعض ولكن ليس جميعهم."],
+        "answer": 1
+    },
+    { 
+        "question": "انتشار الإسلام جاء بقوة المسلمين وشجاعتهم في الحرب والقتال ومواجهة المشركين بقوة السيف.",
+        "options": ["صحيح", "خطأ، الإسلام نشر لأنه دين الحق ووجد فيه الناس الراحة والطمأنينة القلبية.", "خطأ، انتشار الإسلام كان عن طريق الحرب فقط."],
+        "answer": 1
+    },
+    { 
+        "question": "ما الذي يجمع سورة يوسف بصلح الحديبية؟ معللا جوابك بنص شرعي.",
+        "options": ["كلاهما كانا نتائج رؤيا.", "كلاهما كانا انتصارًا حربيًا.", "لا يوجد أي ارتباط بينهما."],
+        "answer": 0
+    },
+    { 
+        "question": "التفاوض هو أسلوب من أساليب حل النزاعات وتسوية الصراعات بين طرفين مختلفين عن طريق القتال والمساومة والاغراءات.",
+        "options": ["صحيح", "خطأ، التفاوض هو أسلوب من أساليب حل النزاعات بشكل سلمي توافقي لا قتال فيه.", "خطأ، التفاوض يتم عن طريق الغزو والقتال."],
+        "answer": 1
+    },
+    { 
+        "question": "بين لأصدقائك ثلاث مميزات للتفاوض عند النبي صلى الله عليه وسلم.",
+        "options": ["عدم احترام قواعد التفاوض", "فرض الاحترام لقواعد التفاوض، إرباك الخصوم، تقوية موقف الرسول ﷺ مفاوضًا.", "تقليل الحوارات والاعتماد على القوة فقط."],
+        "answer": 1
+    },
+    { 
+        "question": "من فوائد التفاوض أنه يقدم المصلحة الشخصية عن المصلحة العامة.",
+        "options": ["صحيح", "خطأ، بل يقدم المصلحة العامة التي تهم الجماعة وليس الفرد.", "خطأ، يتوازن بين المصلحة الشخصية والمصلحة العامة."],
+        "answer": 1
+    },
+   { 
+        "question": "مثل لنموذجين لتشاور النبي صلى الله عليه وسلم.",
+        "options": ["تشاور النبي صلى الله عليه وسلم مع الصحابة في غزوة بدر.", "تشاور النبي صلى الله عليه وسلم مع الصحابة في غزوة أحد.", "تشاور النبي صلى الله عليه وسلم مع الصحابة في غزوة الخندق."],
+        "answer": 1
+    },
+    { 
+        "question": "هل كان النبي صلى الله عليه وسلم يعرض خيارات مختلفة على الصحابة في التفاوض؟",
+        "options": ["نعم, كان يعرض خيارات متعددة لتحديد أفضل السبل.", "لا, كان يفرض عليهم الخيار الوحيد.", "نعم, ولكن في حالات نادرة."],
+        "answer": 0
+    },
+    { 
+        "question": "بين أثر التفاوض مع قريش في صلح الحديبية على إسلام الكثير من الناس.",
+        "options": ["كان التفاوض سببًا في تقوية العلاقات وفتح قلوب الناس للإسلام.", "التفاوض لم يؤثر على إسلام الكثيرين.", "التفاوض أدى إلى صراع حاد ولم يؤثر على الناس."],
+        "answer": 0
+    },
+    { 
+        "question": "هل حقق صلح الحديبية هدفه في تعزيز مكانة المسلمين؟",
+        "options": ["نعم, فقد أدى إلى تثبيت مكانة المسلمين في شبه الجزيرة العربية.", "لا, لم يحقق الصلح أي نتائج إيجابية.", "نعم, ولكنه كان مؤقتًا فقط."],
+        "answer": 0
+    },
+    { 
+        "question": "أذكر أهم نقاط الاتفاق بين المسلمين وكفار قريش في صلح الحديبية.",
+        "options": ["وقف القتال لمدة عشر سنوات.", "المسلمين يعودون إلى المدينة دون أن يؤدي ذلك إلى إضعاف مكانتهم.", "كل الخيارات صحيحة."],
+        "answer": 2
+    },
+    { 
+        "question": "هل كان صلح الحديبية خطوة استراتيجية في تاريخ الإسلام؟",
+        "options": ["نعم, فهو مهد لفتح مكة وإسلام الكثير من العرب.", "لا, لم يكن له أي أهمية استراتيجية.", "نعم, ولكن النتائج كانت محدودة."],
+        "answer": 0
+    },
+    { 
+        "question": "كيف أثر صلح الحديبية على الدعوة الإسلامية؟",
+        "options": ["سمح للمسلمين بالتفرغ لدعوتهم وانتشار الإسلام.", "أدى إلى تراجع الدعوة الإسلامية.", "لم يكن له أي تأثير على الدعوة الإسلامية."],
+        "answer": 0
+    },
+        ],
+        "islamic-hakim-response": [
+            { "question": "الزواج هو ميثاق يتفق حوله الزوج مع الزوجة على أساس بناء علاقة شرعية محددة بزمان ومكان.",
+        "options": ["صحيح", "خطأ", "يعتمد على الحالة"],
+        "answer": 1
+    },
+    {
+        "question": "الزواج محرم في حق من لا يملك أموال كثيرة، وأملاك وأراضي.",
+        "options": ["صحيح", "خطأ", "في بعض الحالات"],
+        "answer": 1
+    },
+    {
+        "question": "الحكم الأصلي للزواج هو الإباحة.",
+        "options": ["صحيح", "خطأ", "مشروط"],
+        "answer": 0
+    },
+    {
+        "question": "شرع الله الزواج، وأحل معه خيار توثيقه على الدوام أو بالمدة المحددة.",
+        "options": ["صحيح", "خطأ", "يعتمد على الظروف"],
+        "answer": 1
+    },
+    {
+        "question": "يجوز للرجل الزواج من أي امرأة شريطة أن تكون بالغة وعاقلة وقادرة على المسؤولية.",
+        "options": ["صحيح", "خطأ", "فقط إذا كانت غنية"],
+        "answer": 1
+    },
+    {
+        "question": "للزواج أكثر من حكم شرعي في الإسلام.",
+        "options": ["صحيح", "خطأ", "دائمًا محرم"],
+        "answer": 0
+    },
+    {
+        "question": "يكون الزواج واجبًا في حق الرجل الذي يملك مالًا كثيرًا.",
+        "options": ["صحيح", "خطأ", "فقط إذا كان غنيًا"],
+        "answer": 1
+    },
+    {
+        "question": "أركان الزواج أربعة وهي: الصيغة، الولي، الاشهاد، العقد.",
+        "options": ["صحيح", "خطأ", "حسب العادات"],
+        "answer": 1
+    },
+    {
+        "question": "من شروط الصيغة أن يكون لفظًا صريحًا مصرحًا به، أو تلميحًا دالًا عليه.",
+        "options": ["صحيح", "خطأ", "يختلف حسب العرف"],
+        "answer": 0
+    },
+    {
+        "question": "الإيجاب والقبول لفظ يخص العدلين في المحكمة.",
+        "options": ["صحيح", "خطأ", "يعتمد على القاضي"],
+        "answer": 1
+    },
+    {
+        "question": "المحل: هو الزوج والزوجة، ولا يشترط في توثيق العقد وجوب حضورهما إذا حال مانع يوكل الحضور للولي، ويوقع في مكانه.",
+        "options": ["صحيح", "خطأ", "في بعض الحالات"],
+        "answer": 1
+    },
+    {
+        "question": "واجب أثناء توثيق العقد أن تحصل نية أن هذا الزواج على وجه الدوام، ويباح في توثيق العقد أن يكون مؤقتًا، لأن النية هي الأساس وليس العقد.",
+        "options": ["صحيح", "خطأ", "غير مهم"],
+        "answer": 1
+    },
+    {
+        "question": "قال تعالى: \"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ\" حدد القضية الأساسية في الآية؟",
+        "options": ["الزواج هو ميثاق لبناء علاقة شرعية قائمة على المحبة والمودة والرحمة.", "الزواج هو عقد زمني محدود.", "الزواج لا يتطلب نية المودة."],
+        "answer": 0
+    },
+    {
+        "question": "قال تعالى: \"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ\" استخرج مقصد للزواج من الآية؟",
+        "options": ["المودة والرحمة والسكينة", "الولد والذرية", "المتعة فقط"],
+        "answer": 0
+    },
+    {
+        "question": "قال تعالى: \"وَقَالَ الَّذِي اشْتَرَاهُ مِنْ مِصْرَ لِامْرَأَتِهِ أَكْرِمِي مَثْوَاهُ عَسَى أَنْ يَنْفَعَنَا أَوْ نَتَّخِذَهُ وَلَدًا\" ما النعمة التي افتقدها العزيز وامرأته من خلال الآية؟",
+        "options": ["نعمة الأبناء", "نعمة المال", "نعمة العقل"],
+        "answer": 0
+    },
+    {
+        "question": "الخطبة بمثابة زواج يحق فيه للزوج لقاء زوجته، والاختلاء بها وشراء الهدايا لها، بشرط أن تكون نيته صادقة ولا نوايا خبيثة عنده.",
+        "options": ["صحيح", "خطأ", "يجوز في بعض الحالات"],
+        "answer": 1
+    },
+    {
+        "question": "اختيار الزوج للزوجة أو الزوجة للزوج يكون على حسب رضا الوالدين، ومدا وجود المال والمنزل.",
+        "options": ["صحيح", "خطأ", "يختلف حسب الثقافة"],
+        "answer": 1
+    },
+    {
+        "question": "إذا فسخ الرجل الخطبة فمن حقه أن يسترد كل هداياه، ولوازمه من خطيبته وأهلها.",
+        "options": ["صحيح", "خطأ", "حسب الاتفاق"],
+        "answer": 1
+    },
+    {
+        "question": "الزواج يعد مكروهًا في حق من يسيء للمرأة التي يتزوجها.",
+        "options": ["صحيح", "خطأ", "في بعض الحالات"],
+        "answer": 0
+    },
+    {
+        "question": "يعد الزواج محرما في حق من يحقق غايات الزواج.",
+        "options": ["صحيح", "خطأ", "يعتمد على النية"],
+        "answer": 1
+    },
+    {
+        "question": "للزواج مقدمات أساسية أهمها: بناء الأسرة، والصداق.",
+        "options": ["صحيح", "خطأ", "يعتمد على الحالة"],
+        "answer": 1
+    },
+    {
+        "question": "إذا أقيم حفل الخطبة بحضور الناس والشهود لا يحق فسخها إلا بإعلام العدلين أو القاضي.",
+        "options": ["صحيح", "خطأ", "لا يشترط وجود القاضي"],
+        "answer": 1
+    },
+    {
+        "question": "يحق لكل امرأة أن تزوج نفسها إذا رفض أبوها ذلك.",
+        "options": ["صحيح", "خطأ", "حسب القوانين"],
+        "answer": 1
+    },
+    {
+        "question": "من شروط صحة الصيغة أن توثق في عقد الزواج.",
+        "options": ["صحيح", "خطأ", "حسب المتفق عليه"],
+        "answer": 0
+    },
+    {
+        "question": "رجل اتفق مع خطيبته على صداق قدره 1000 درهم على أساس أن يعطيها النصف، والباقي من بعد، فوافقت على ذلك.",
+        "options": ["صحيح", "خطأ", "مشروط"],
+        "answer": 0
+    },
+    {
+        "question": "رجل اتفق مع خطيبته على أن لا يعطيها صداقًا للزواج بها، فرضيت على ذلك وهي فرحة، وتقول أنا معك بلا صداق إلى الأبد.",
+        "options": ["صحيح", "خطأ", "في حالات خاصة"],
+        "answer": 1
+    },
+    {
+        "question": "سأل العدلان الزوج على مقدار الصداق، فقال أنه سر بينه وبين زوجته، فتفهم العدلان ذلك وتركوا مقدار الصداق فارغًا.",
+        "options": ["صحيح", "خطأ", "فقط في حالات خاصة"],
+        "answer": 1
+    },
+    {
+        "question": "رجل أرسل ابنته لتدرس بالمدينة وخوفًا عليها اقترح على زميلها في الدراسة أن يتزوجها ويسكنا معًا إلى حين انتهاء الدراسة ويتفارقا.",
+        "options": ["صحيح", "خطأ", "جائز حسب الشرع"],
+        "answer": 1
+    },
+    {
+        "question": "اشترطت امرأة على خطيبها أن يكون صداقها بحفظ سورة من القرآن الكريم، فوافق على ذلك.",
+        "options": ["صحيح", "خطأ", "في حالات خاصة"],
+        "answer": 0
+    },
+    {
+        "question": "أذكر مقصدين للزواج؟",
+        "options": ["المودة والرحمة", "بناء أسرة مسلمة متماسكة", "تكاثر الذرية"],
+        "answer": 0
+    },
+    {
+        "question": "من سبل تحقيق مقاصد الزواج بناء أسرة مسلمة ومتماسكة.",
+        "options": ["صحيح", "خطأ", "يعتمد على الحالة"],
+        "answer": 1
+    },
+    {
+        "question": "اذكر سبيلين لتحقيق مقاصد الزواج.",
+        "options": ["المعاشرة بالمعروف باحترام الحقوق وأداء الواجبات", "تعفف الزوجين وعدم خيانة العهد", "بناء الأسرة أولًا"],
+        "answer": 0
+    },
+    {
+        "question": "تقدمت عائلة رجل به خلل عقلي لخطبة امرأة سليمة، فوافقت على ذلك بنية أن زواجها منه سيساعده في الشفاء.",
+        "options": ["صحيح", "خطأ", "جائز في حالات خاصة"],
+        "answer": 1
+    },
+    {
+        "question": "استدل بدليل شرعي يدل على مشروعية الزواج.",
+        "options": ["قال تعالى: \"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ\"", "قال تعالى: \"وَأَنْكِحُوا الْأَيَامَى مِنْكُمْ وَالصَّالِحِينَ مِنْ عِبَادِكُمْ وَإِمَائِكُمْ\"", "لا يوجد دليل شرعي"],
+        "answer": 0
+    },
+        ],
+        "islamic-hakim-wisdom": [
+    {
+        "question": "الحقوق هي المصالح الثابتة للفرد أو الجماعة المادية أو المعنوية التي يقرها الشرع أو القانون.",
+        "options": ["صحيح", "خطأ", "لا يوجد جواب محدد"],
+        "answer": 0
+    },
+    {
+        "question": "الحقوق تتخرج عن حقين فقط: حق خاص بالنفس، وحق للغير.",
+        "options": ["صحيح", "خطأ", "في بعض الحالات"],
+        "answer": 1
+    },
+    {
+        "question": "الحقوق في الإسلام هي ربانية المصدر، وملزمة ومرتبطة بالجزاء، وشاملة لجميع التخصصات.",
+        "options": ["صحيح", "خطأ", "غير صحيح"],
+        "answer": 0
+    },
+    {
+        "question": "الأمانة هي صفة نفسية وقلبية عالمية يعف بها الإنسان عن حقوق الآخرين.",
+        "options": ["صحيح", "خطأ", "لا يمكن الجزم"],
+        "answer": 0
+    },
+    {
+        "question": "ثلاثيات الوفاء بالأمانة تشمل حفظ الدين، حفظ النفس، والحفاظ على المجتمع.",
+        "options": ["صحيح", "خطأ", "بعض الصح"],
+        "answer": 0
+    },
+    {
+        "question": "الوفاء بالأمانة والمسؤولية يساهم في نشر الثقة بين أفراد المجتمع.",
+        "options": ["صحيح", "خطأ", "قد يساهم ولكن ليس دائمًا"],
+        "answer": 0
+    },
+    {
+        "question": "آية يوسف عليه السلام في قوله: \"إِنَّكَ ٱلَيَنَا مَكِينٌ\" تشير إلى الأمانة والعلم.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الوفاء بالأمانة والمسؤولية يشمل الأفراد والحيوانات.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 1
+    },
+    {
+        "question": "الصبر هو قدرة الإنسان على تحمل الشدائد والابتلاءات دون جزع.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الصبر يعبر عن اختبار إيمان الإنسان وقوته.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "البرهان على الصبر واليقين هو التحمل والاطمئنان في الشدائد.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الصبر واليقين هما أساس ثبات الإيمان.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الوفاء بالعقود في الآية: \"أوفوا بالعقود\" يدعو لوجوب الوفاء.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "في حديث عبد الله بن مسعود، يشير النص إلى التوافق بين الصبر واليقين.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الصبر واليقين في تجاوز أزمة كورونا يعكس إيمان المؤمن وثباته.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "اليقين هو العلم الراسخ الذي لا يعكره شك.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "العفو هو التجاوز عن المذنب مع القدرة على معاقبته.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "التسامح هو التساهل واليسر في المعاملات المالية والاجتماعية.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "العفو والتسامح هما صفات يمكن أن تتواجد في حق المذنبين فقط.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 1
+    },
+    {
+        "question": "التعاون بين العفو والتسامح يعزز الروابط المجتمعية.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "في سورة يوسف، يظهر العفو والتسامح من يوسف تجاه إخوته.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "العفو والتسامح في الإسلام يساعدان في بناء مجتمع متماسك.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الوفاء بالعقود يعتبر واجبًا في الإسلام.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الوفاء بالعقود يشمل جميع العقود بين البشر، سواء كانت اجتماعية أو مالية.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "العفة هي خلق يلتزم به الفرد في حياتهم اليومية.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الحياء هو خلق ينبع من الفرد ليجنب نفسه الفعل القبيح.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "العفة والحياء يساهمان في الحد من الفواحش في المجتمع.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الفواحش تشمل جميع القبيح من الكلمات والأفعال.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الفواحش حرام في الإسلام ويجب اجتنابها في جميع الحالات.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "حياة الإنسان تتمحور حول البيئة والمحيط الذي يسخره الله له.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "التعامل مع البيئة يجب أن يتبع قواعد علمية ودينية في الإسلام.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "المؤمن الصادق في الإسلام يجب أن يتحلى بالأخلاق الحميدة.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    },
+    {
+        "question": "الأوصاف السبعة التي جاء بها الحديث الشريف يمكن أن تكون صعبة التطبيق في الواقع المعاصر.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 1
+    },
+    {
+        "question": "الحديث الشريف عن السبعة الذين يضلهم الله يشمل العادلين، الشاب الناشئ في العبادة، والرجل الذي يخاف الله في المواقف الصعبة.",
+        "options": ["صحيح", "خطأ", "محتمل"],
+        "answer": 0
+    }
+],
+        "islamic-nabil-introduction": [
+            { question: "ما هو مفهوم التزكية؟", options: ["طهارة النفس", "التواضع", "الصلاة", "الصدق"], answer: 0 },
+        ],
+        "islamic-nabil-justice": [
+            { question: "ما معنى القسط؟", options: ["العدل", "التسامح", "الخير", "العطاء"], answer: 0 },
+        ],
+        "islamic-nabil-respond": [
+            { question: "ما هو مفهوم الاستجابة؟", options: ["الاستماع بعناية", "الرفض التام", "التجاهل", "التعاطف"], answer: 0 },
+        ],
+        "islamic-nabil-imitating": [
+            { question: "ما معنى الاقتداء؟", options: ["اتباع النبي", "اتباع العادات", "التقليد", "الابتعاد"], answer: 0 },
+        ],
+        "arabic-aisha-science": [
+            { question: "ما هو الفعل الماضي من كلمة 'يكتب'؟", options: ["كتب", "يكتب", "كتابة", "كاتب"], answer: 0 },
+        ],
+        "arabic-fatima-literature": [
+            { question: "من هو مؤلف كتاب 'الأغاني'؟", options: ["أبو الفرج الأصفهاني", "الجاحظ", "المتنبي", "سيبويه"], answer: 0 },
+        ],
+        "social-aisha-history": [
+            { question: "ما هو تاريخ تأسيس الأمم المتحدة؟", options: ["1945", "1950", "1939", "1920"], answer: 0 },
+        ],
+        "social-aisha-geography": [
+            { question: "ما هو أكبر محيط في العالم؟", options: ["المحيط الهادئ", "المحيط الأطلسي", "المحيط الهندي", "البحر الأبيض المتوسط"], answer: 0 },
+        ],
+        "social-fatima-sociology": [
+            { question: "من هو مؤسس السوسيولوجيا الحديثة؟", options: ["إميل دوركايم", "ماكس فيبر", "كارل ماركس", "أوغست كونت"], answer: 0 },
+        ],
+        "french-aisha-vocabulary": [
+            { question: "ما هو معنى كلمة 'maison'؟", options: ["منزل", "شجرة", "سيارة", "طاولة"], answer: 0 },
+        ],
+        "french-aisha-conjugation": [
+            { question: "ما هو تصريف الفعل 'être' في الماضي؟", options: ["été", "être", "suis", "sont"], answer: 0 },
+        ],
+        "french-fatima-comprehension": [
+            { question: "ما هو معنى كلمة 'chat'؟", options: ["قطة", "كلب", "طيور", "حيوانات"], answer: 0 },
+        ]
+    };
 
-        let currentSubject = "";
-        let currentQuestionIndex = 0;
-        let correctAnswersCount = 0;
-        let incorrectQuestions = [];
+   function startQuiz(subject) {
+        currentSubject = subject;
+        currentQuestionIndex = 0;
+        incorrectAnswers = [];
+        displayQuestion();
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('retry-button').style.display = 'none';
+        document.getElementById('incorrect-answers').innerHTML = '';
+    }
 
-        function startQuiz(subject) {
-            currentSubject = subject;
-            currentQuestionIndex = 0;
-            correctAnswersCount = 0;
-            incorrectQuestions = [];
-            displayQuestion();
-            const quizSection = document.getElementById('quiz');
-            quizSection.style.display = 'block';
-            document.getElementById('feedback').textContent = '';
-            document.getElementById('incorrect-questions').style.display = 'none'; // إخفاء قائمة الأسئلة الخاطئة
-            document.getElementById('incorrect-questions-list').innerHTML = ''; // مسح قائمة الأسئلة الخاطئة
-            window.location.href = '#quiz';
-        }
+    function displayQuestion() {
+        const questionData = questions[currentSubject][currentQuestionIndex];
+        const container = document.getElementById('question-container');
+        const questionNumber = document.getElementById('question-number');
+        container.innerHTML = '';
 
-        function displayQuestion() {
-            const container = document.getElementById('question-container');
-            container.innerHTML = ""; // مسح الأسئلة السابقة
-            
-            // عرض رقم السؤال
-            const questionNumber = document.getElementById('question-number');
-            questionNumber.textContent = `السؤال ${currentQuestionIndex + 1} من ${questions[currentSubject].length}`;
+        questionNumber.textContent = `السؤال ${currentQuestionIndex + 1}:`;
 
-            const questionData = questions[currentSubject][currentQuestionIndex];
-            const questionEl = document.createElement('div');
-            questionEl.className = 'question';
+        const questionEl = document.createElement('div');
+        const questionText = document.createElement('p');
+        questionText.textContent = questionData.question;
+        questionEl.appendChild(questionText);
 
-            const questionText = document.createElement('h3');
-            questionText.textContent = questionData.question;
-            questionEl.appendChild(questionText);
+        questionData.options.forEach((option, index) => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.onclick = () => checkAnswer(index, questionData);
+            questionEl.appendChild(button);
+        });
 
-            questionData.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.textContent = option;
-                button.onclick = () => checkAnswer(index);
-                questionEl.appendChild(button);
+        container.appendChild(questionEl);
+    }
+
+    function checkAnswer(selectedIndex, questionData) {
+        if (selectedIndex !== questionData.answer) {
+            incorrectAnswers.push({
+                question: questionData.question,
+                correctAnswer: questionData.options[questionData.answer],
+                selectedAnswer: questionData.options[selectedIndex]
             });
-
-            container.appendChild(questionEl);
         }
 
-        function checkAnswer(selectedIndex) {
-            const feedback = document.getElementById('feedback');
-            const questionData = questions[currentSubject][currentQuestionIndex];
+        currentQuestionIndex++;
 
-            if (selectedIndex === questionData.answer) {
-                feedback.textContent = 'إجابة صحيحة! أحسنت!';
-                feedback.style.color = 'green';
-                correctAnswersCount++;
-            } else {
-                feedback.textContent = 'إجابة خاطئة. حاول مرة أخرى.';
-                feedback.style.color = 'red';
-                incorrectQuestions.push({ question: questionData.question, correctAnswer: questionData.options[questionData.answer] }); // إضافة السؤال الخاطئ إلى القائمة
-            }
+        if (currentQuestionIndex < questions[currentSubject].length) {
+            setTimeout(displayQuestion, 1000);
+        } else {
+            showFeedback();
+        }
+    }
 
-            currentQuestionIndex++;
+    function showFeedback() {
+        const feedback = document.getElementById('feedback');
+        feedback.textContent = "لقد أكملت الاختبار!";
 
-            if (currentQuestionIndex < questions[currentSubject].length) {
-                setTimeout(displayQuestion, 1000);
-            } else {
-                endQuiz();
-            }
+        if (incorrectAnswers.length > 0) {
+            let incorrectHTML = "<h3>الإجابات الخاطئة:</h3><ul>";
+            incorrectAnswers.forEach(answer => {
+                incorrectHTML += `<li>السؤال: ${answer.question} <br> إجابتك: ${answer.selectedAnswer} <br> الإجابة الصحيحة: ${answer.correctAnswer}</li>`;
+            });
+            incorrectHTML += "</ul>";
+            document.getElementById('incorrect-answers').innerHTML = incorrectHTML;
+        } else {
+            document.getElementById('incorrect-answers').innerHTML = "<p>أحسنت! لم ترتكب أي أخطاء.</p>";
         }
 
-        function endQuiz() {
-            const feedback = document.getElementById('feedback');
-            feedback.innerHTML = `أكملت الاختبار بنجاح!<br>عدد الإجابات الصحيحة: ${correctAnswersCount} من ${questions[currentSubject].length}<br>`;
-            
-            if (incorrectQuestions.length > 0) {
-                feedback.innerHTML += `الأسئلة التي أخطأت فيها:<br>`;
-                const incorrectList = document.getElementById('incorrect-questions-list');
-                incorrectQuestions.forEach(item => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${item.question} - الجواب الصحيح: ${item.correctAnswer}`;
-                    incorrectList.appendChild(listItem);
-                });
-                document.getElementById('incorrect-questions').style.display = 'block'; // إظهار قائمة الأسئلة الخاطئة
-            } else {
-                feedback.innerHTML += "لم تخطئ في أي سؤال!";
-            }
-        }
-    </script>
+        document.getElementById('retry-button').style.display = 'block';
+    }
+
+    function retryQuiz() {
+        startQuiz(currentSubject);
+    }
+</script>
 </body>
 </html>
