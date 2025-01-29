@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الثانوية التأهيلية عمر المختار</title>
     <style>
-       /* تحسين تصميم الخلفية */
+    /* تحسين تصميم الخلفية */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -243,50 +243,130 @@ footer p {
     font-size: 1rem;
 }
 
-/* تحسين التفاعل في الهواتف */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
+                  /* تصميم القائمة المنبثقة */
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+        /* تنسيق الشريط الجانبي */
+        nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* مخفي في البداية */
+            background: #003366;
+            width: 250px;
+            height: 100%;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            transition: left 0.3s ease-in-out;
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column; /* تأكد أن القائمة تظهر عمودياً */
+            align-items: start; /* ضبط المحاذاة على اليسار */
+        }
 
-    .hero {
-        padding: 80px 15px;
-    }
+        /* إظهار القائمة عند الفتح */
+        nav.show {
+            left: 0;
+        }
 
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-
-    .subject-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .subject {
-        padding: 15px;
-    }
+       /* تصميم القائمة المنبثقة */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
 }
+
+/* تنسيق القائمة الجانبية */
+nav {
+    display: none;
+    position: fixed;
+    top: 20px; /* إبعادها قليلاً عن الحافة العلوية */
+    left: 10px; /* تحريكها قليلاً من اليسار */
+    width: 200px; /* تصغير العرض */
+    height: auto; /* جعلها بحجم المحتوى */
+    background: rgba(0, 51, 102, 0.95); /* لون أزرق داكن شفاف */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px; /* جعل الزوايا مستديرة */
+    transform: translateX(-100%); /* تحريكها خارج الشاشة */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+/* تنظيم الخيارات عمودياً */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* تصغير حجم النص */
+    text-align: left;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #ffaa00;
+    border-radius: 5px;
+}
+
+/* عند فتح القائمة */
+.show {
+    display: block;
+    transform: translateX(0); /* إرجاع القائمة إلى مكانها */
+    opacity: 1;
+}
+
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>الثانوية التأهيلية عمر المختار</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الموقع</a></li>
-                    <li><a href="#subjects">المواد</a></li>
-                    <li><a href="#quiz">الاختبار</a></li>
-                </ul>
-            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         </div>
     </header>
+
+    <nav id="menu">
+        <ul>
+    <li><a href="#home" onclick="closeMenu()">الرئيسية</a></li>
+    <li><a href="#about" onclick="closeMenu()">عن الموقع</a></li>
+    <li><a href="#subjects" onclick="closeMenu()">المواد</a></li>
+    <li><a href="#quiz" onclick="closeMenu()">الاختبار</a></li>
+    <li><a href="https://web.facebook.com/profile.php?id=100064010625968" target="_blank" onclick="closeMenu()">📘 صفحتنا على فيسبوك</a></li>
+    <li><a href="https://www.youtube.com/@---sq6sd" target="_blank" onclick="closeMenu()">🎥 قناتنا على يوتيوب</a></li>
+</ul>
+
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        function closeMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.remove("show");
+        }
+    </script>
 
     <section id="home" class="hero">
         <div class="container">
