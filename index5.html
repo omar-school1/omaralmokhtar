@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس اولى بكالوريا </title>
+    <style>
+       body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff9a76, #6ec6ff); /* تدرج الألوان من الأبيض إلى البرتقالي الفاتح */
+    color: #444;
+    text-align: center;
+    animation: fadeInPage 1s forwards;
+}
+
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #6ec6ff; /* لون أزرق غامق */
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.menu a {
+    background: #1976d2; /* لون أزرق متوسط */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+    background: #ff9800; /* لون برتقالي */
+    transform: scale(1.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 0.7s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.subject {
+    background: #ffffff; /* خلفية بيضاء */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.subject:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffecb3; /* لون برتقالي فاتح عند التفاعل */
+}
+
+.subject-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    background: #ff9800; /* لون برتقالي */
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #e65100; /* لون برتقالي غامق */
+}
+
+.back-btn {
+    background: #d32f2f; /* لون أحمر غامق */
+}
+
+h3 {
+    margin-top: 20px;
+    color: #1565c0; /* لون أزرق غامق */
+    animation: slideIn 1s ease-out;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #1565c0; /* لون أزرق غامق */
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #ff9800; /* اللون البرتقالي عند التفاعل */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #1565c0; /* نفس اللون الأزرق الغامق */
+    margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+
+    <script>
+        function showContent(subjectId) {
+            // إخفاء جميع خيارات المواد
+            document.querySelectorAll('.subject-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+
+            // إظهار محتوى المادة المحددة
+            document.getElementById(subjectId).style.display = 'block';
+
+            // التمرير التلقائي إلى المادة
+            document.getElementById(subjectId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showDetails(subjectId, type) {
+            // إخفاء جميع خيارات المواد
+            document.querySelectorAll('.subject-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+
+            // إظهار محتوى المادة المحددة
+            document.getElementById(subjectId + '-' + type).style.display = 'block';
+        }
+
+        function goBack(subjectId) {
+            // إخفاء جميع تفاصيل المادة
+            document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+            // إظهار خيارات الدروس والتمارين والفروض
+            document.getElementById(subjectId).style.display = 'block';
+        }
+
+        function goToMainPage() {
+            // إظهار الصفحة الرئيسية
+            document.querySelectorAll('.subject-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.subjects').forEach(el => el.style.display = 'grid');
+        }
+    </script>
+</head>
+<body>
+    <header>دروس اولى بكالوريا</header>
+
+    <img src="https://i.imgur.com/QTqgzw8.png" alt="وصف الصورة" width="300">
+    
+    </div>
+<section id="home" class="hero">
+        <div class="container">
+            <h2>مرحبا بك في قسم دروس اولى بكالوريا</h2>
+            <p>هنا ستجد مجموعة من الدروس الخاصة بكل مادة مرفوقة بتمارين وفروض </p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <h2>اختر المادة</h2>
+        <div class="subjects">
+            <div class="subject" onclick="showContent('arabic')">
+                <h3>اللغة العربية</h3>
+            </div>
+            <div class="subject" onclick="showContent('islamic')">
+                <h3>التربية الإسلامية</h3>
+            </div>
+            <div class="subject" onclick="showContent('french')">
+                <h3>اللغة الفرنسية</h3>
+            </div>
+            <div class="subject" onclick="showContent('english')">
+                <h3>اللغة الإنجليزية</h3>
+            </div>
+            <div class="subject" onclick="showContent('history')">
+                <h3>الاجتماعيات</h3>
+            </div>
+            <div class="subject" onclick="showContent('philosophy')">
+                <h3>الفلسفة</h3>
+            </div>
+            <div class="subject" onclick="showContent('biology')">
+                <h3>علوم الحياة والأرض</h3>
+            </div>
+            <div class="subject" onclick="showContent('physics')">
+                <h3>الفيزياء</h3>
+            </div>
+            <div class="subject" onclick="showContent('math')">
+                <h3>الرياضيات</h3>
+            </div>
+        </div>
+        
+        <!-• محتوى المواد -->
+        <div id="arabic" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('arabic', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('arabic', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('arabic', 'assignments')">الفروض</a>
+        </div>
+        <div id="islamic" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('islamic', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('islamic', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('islamic', 'assignments')">الفروض</a>
+        </div>
+        <div id="french" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('french', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('french', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('french', 'assignments')">الفروض</a>
+        </div>
+        <div id="english" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('english', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('english', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('english', 'assignments')">الفروض</a>
+        </div>
+        <div id="history" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('history', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('history', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('history', 'assignments')">الفروض</a>
+        </div>
+        <div id="philosophy" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('philosophy', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('philosophy', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('philosophy', 'assignments')">الفروض</a>
+        </div>
+        <div id="biology" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('biology', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('biology', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('biology', 'assignments')">الفروض</a>
+        </div>
+        <div id="physics" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('physics', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('physics', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('physics', 'assignments')">الفروض</a>
+        </div>
+        
+        <div id="math" class="subject-content">
+            <a href="#" class="btn" onclick="showDetails('math', 'lessons')">الدروس</a>
+            <a href="#" class="btn" onclick="showDetails('math', 'exercises')">التمارين</a>
+            <a href="#" class="btn" onclick="showDetails('math', 'assignments')">الفروض</a>
+        </div>
+
+        <!-• تفاصيل المحتوى -->
+        <div id="arabic-lessons" class="details" style="display:none;">
+            <h3>دروس اللغة العربية</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+<li><a href="#">درس 9 • عنوان الدرس 9</a></li>
+<li><a href="#">درس 10 • عنوان الدرس 10</a></li>
+
+
+           </ul>
+            <button class="btn back-btn" onclick="goBack('arabic')">رجوع</button>
+        </div>
+        <div id="arabic-exercises" class="details" style="display:none;">
+            <h3>تمارين اللغة العربية</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+<li><a href="#">تمرين 2 • عنوان التمرين 2</a></li>
+<li><a href="#">تمرين 3 • عنوان التمرين 3</a></li>
+<li><a href="#">تمرين 4 • عنوان التمرين 4</a></li>
+<li><a href="#">تمرين 5 • عنوان التمرين 5</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('arabic')">رجوع</button>
+        </div>
+        <div id="arabic-assignments" class="details" style="display:none;">
+            <h3>فروض اللغة العربية</h3>
+            <ul>
+          <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+<
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('arabic')">رجوع</button>
+        </div>
+
+        <div id="islamic-lessons" class="details" style="display:none;">
+            <h3>دروس التربية الإسلامية</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('islamic')">رجوع</button>
+        </div>
+        <div id="islamic-exercises" class="details" style="display:none;">
+            <h3>تمارين التربية الإسلامية</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+                <li><a href="#">تمرين 2 • عنوان التمرين 2</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('islamic')">رجوع</button>
+        </div>
+        <div id="islamic-assignments" class="details" style="display:none;">
+            <h3>فروض التربية الإسلامية</h3>
+            <ul>
+             <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+<li><a href="#">فرض 6 • عنوان الفرض 6</a></li>
+<li><a href="#">فرض 7 • عنوان الفرض 7</a></li>
+<li><a href="#">فرض 8 • عنوان الفرض 8</a></li>
+<li><a href="#">فرض 9 • عنوان الفرض 9</a></li>
+<li><a href="#">فرض 10 • عنوان الفرض 10</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('islamic')">رجوع</button>
+        </div>
+
+        <div id="french-lessons" class="details" style="display:none;">
+            <h3>دروس اللغة الفرنسية</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+<li><a href="#">درس 9 • عنوان الدرس 9</a></li>
+<li><a href="#">درس 10 • عنوان الدرس 10</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('french')">رجوع</button>
+        </div>
+        <div id="french-exercises" class="details" style="display:none;">
+            <h3>تمارين اللغة الفرنسية</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('french')">رجوع</button>
+        </div>
+        <div id="french-assignments" class="details" style="display:none;">
+            <h3>فروض اللغة الفرنسية</h3>
+            <ul>
+            <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('french')">رجوع</button>
+        </div>
+
+        <div id="english-lessons" class="details" style="display:none;">
+            <h3>دروس اللغة الإنجليزية</h3>
+            <ul>
+               <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+<li><a href="#">درس 9 • عنوان الدرس 9</a></li>
+<li><a href="#">درس 10 • عنوان الدرس 10</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('english')">رجوع</button>
+        </div>
+        <div id="english-exercises" class="details" style="display:none;">
+            <h3>تمارين اللغة الإنجليزية</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('english')">رجوع</button>
+        </div>
+        <div id="english-assignments" class="details" style="display:none;">
+            <h3>فروض اللغة الإنجليزية</h3>
+            <ul>
+               <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('english')">رجوع</button>
+        </div>
+
+        <div id="history-lessons" class="details" style="display:none;">
+            <h3>دروس الاجتماعيات</h3>
+            <ul>
+                  <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+<li><a href="#">درس 9 • عنوان الدرس 9</a></li>
+<li><a href="#">درس 10 • عنوان الدرس 10</a></li>
+<li><a href="#">درس 11 • عنوان الدرس 11</a></li>
+<li><a href="#">درس 12 • عنوان الدرس 12</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('history')">رجوع</button>
+        </div>
+        <div id="history-exercises" class="details" style="display:none;">
+            <h3>تمارين الاجتماعيات</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('history')">رجوع</button>
+        </div>
+        <div id="history-assignments" class="details" style="display:none;">
+            <h3>فروض الاجتماعيات</h3>
+            <ul>
+            <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('history')">رجوع</button>
+        </div>
+
+        <div id="philosophy-lessons" class="details" style="display:none;">
+            <h3>دروس الفلسفة</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('philosophy')">رجوع</button>
+        </div>
+        <div id="philosophy-exercises" class="details" style="display:none;">
+            <h3>تمارين الفلسفة</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('philosophy')">رجوع</button>
+        </div>
+        <div id="philosophy-assignments" class="details" style="display:none;">
+            <h3>فروض الفلسفة</h3>
+            <ul>
+           <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('philosophy')">رجوع</button>
+        </div>
+
+        <div id="biology-lessons" class="details" style="display:none;">
+            <h3>دروس علوم الحياة والأرض</h3>
+            <ul>
+               <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('biology')">رجوع</button>
+        </div>
+        <div id="biology-exercises" class="details" style="display:none;">
+            <h3>تمارين علوم الحياة والأرض</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('biology')">رجوع</button>
+        </div>
+        <div id="biology-assignments" class="details" style="display:none;">
+            <h3>فروض علوم الحياة والأرض</h3>
+            <ul>
+           <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('biology')">رجوع</button>
+        </div>
+
+        <div id="physics-lessons" class="details" style="display:none;">
+            <h3>دروس الفيزياء</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('physics')">رجوع</button>
+        </div>
+        <div id="physics-exercises" class="details" style="display:none;">
+            <h3>تمارين الفيزياء</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('physics')">رجوع</button>
+        </div>
+        <div id="physics-assignments" class="details" style="display:none;">
+            <h3>فروض الفيزياء</h3>
+            <ul>
+               <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+<li><a href="#">فرض 5 • عنوان الفرض 5</a></li>
+
+          
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('physics')">رجوع</button>
+        </div>
+
+        <div id="math-lessons" class="details" style="display:none;">
+            <h3>دروس الرياضيات</h3>
+            <ul>
+                <li><a href="#">درس 1 • عنوان الدرس 1</a></li>
+<li><a href="#">درس 2 • عنوان الدرس 2</a></li>
+<li><a href="#">درس 3 • عنوان الدرس 3</a></li>
+<li><a href="#">درس 4 • عنوان الدرس 4</a></li>
+<li><a href="#">درس 5 • عنوان الدرس 5</a></li>
+<li><a href="#">درس 6 • عنوان الدرس 6</a></li>
+<li><a href="#">درس 7 • عنوان الدرس 7</a></li>
+<li><a href="#">درس 8 • عنوان الدرس 8</a></li>
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('math')">رجوع</button>
+        </div>
+        <div id="math-exercises" class="details" style="display:none;">
+            <h3>تمارين الرياضيات</h3>
+            <ul>
+                <li><a href="#">تمرين 1 • عنوان التمرين 1</a></li>
+            </ul>
+            <button class="btn back-btn" onclick="goBack('math')">رجوع</button>
+        </div>
+        <div id="math-assignments" class="details" style="display:none;">
+            <h3>فروض الرياضيات</h3>
+            <ul>
+               <li><a href="#">فرض 1 • عنوان الفرض 1</a></li>
+<li><a href="#">فرض 2 • عنوان الفرض 2</a></li>
+<li><a href="#">فرض 3 • عنوان الفرض 3</a></li>
+<li><a href="#">فرض 4 • عنوان الفرض 4</a></li>
+
+
+            </ul>
+            <button class="btn back-btn" onclick="goBack('math')">رجوع</button>
+        </div>
+    </div>
+</body>
+</html>
