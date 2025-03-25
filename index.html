@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الثانوية التأهيلية عمر المختار</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-    /* تحسين تصميم الخلفية */
-body {
-    font-family: 'Poppins', sans-serif;
+       body { 
+   font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,7 +18,7 @@ body {
 
 /* قسم الهيدر مع تأثيرات */
 header {
-    background-color: #003366; /* اللون الأزرق الداكن */
+    background-color:  #00aaff;  /*لون ازرق فاتح */
     color: #fff;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -62,7 +63,7 @@ nav ul li a:hover {
 
 /* تحسين تأثيرات الخلفية مع تدرج لوني متحرك */
 .hero {
-    background: linear-gradient(45deg, rgba(0, 64, 128, 0.8), rgba(0, 128, 255, 0.8)), url('background.jpg') no-repeat center center/cover;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.8), rgba(102, 204, 102, 0.8)), url('background.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     animation: gradientAnimation 15s ease infinite alternate;
@@ -75,15 +76,16 @@ nav ul li a:hover {
 /* Animation لتحريك التدرج اللوني */
 @keyframes gradientAnimation {
     0% {
-        background: linear-gradient(45deg, rgba(0, 64, 128, 0.8), rgba(0, 128, 255, 0.8));
+        background: linear-gradient(45deg, rgba(0, 123, 255, 0.8), rgba(102, 204, 102, 0.8));
     }
     50% {
-        background: linear-gradient(45deg, rgba(255, 170, 0, 0.8), rgba(255, 94, 77, 0.8));
+        background: linear-gradient(45deg, rgba(0, 200, 255, 0.8), rgba(0, 128, 0, 0.8));
     }
     100% {
-        background: linear-gradient(45deg, rgba(0, 64, 128, 0.8), rgba(0, 128, 255, 0.8));
+        background: linear-gradient(45deg, rgba(0, 123, 255, 0.8), rgba(102, 204, 102, 0.8));
     }
 }
+
 
 .hero h2 {
     font-size: 3rem;
@@ -184,7 +186,7 @@ nav ul li a:hover {
 }
 
 .subject .btn {
-    background-color: #003366; /* لون الأزرق الداكن */
+    background-color:#f2f2f2 
     color: #fff;
     padding: 10px 15px;
     text-decoration: none;
@@ -333,6 +335,8 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+    
+
 
     </style>
 </head>
@@ -388,77 +392,81 @@ nav ul li a:hover {
     <div class="container">
         <h2>المواد الدراسية</h2>
         <div class="subject-grid">
-            <!-- مادة التربية الإسلامية -->
-            <div class="subject">
-                <h3>التربية الإسلامية</h3>
-                <button class="btn" onclick="toggleTeacherChoice('islamic')">ابدأ الاختبار</button>
-                <div id="teacher-choice-islamic" style="display:none;">
-                    <button class="btn" onclick="showOptions('islamic-hakim')">أستاذ حكيم عاطف</button>
-                    <button class="btn" onclick="showOptions('islamic-nabil')">أستاذ نبيل حمدوش</button>
-                </div>
-                <div id="teacher-options-islamic-hakim" style="display:none;">
-                    <button class="btn" onclick="startQuiz('islamic-hakim-introduction')">مدخل التزكية</button>
-                    <button class="btn" onclick="startQuiz('islamic-hakim-imitating')">مدخل الاقتداء</button>
-                    <button class="btn" onclick="startQuiz('islamic-hakim-response')">مدخل الاستجابة</button>
-                    <button class="btn" onclick="startQuiz('islamic-hakim-wisdom')">مدخل الحكمة والقسط</button>
-                </div>
-                <div id="teacher-options-islamic-nabil" style="display:none;">
-                    <button class="btn" onclick="startQuiz('islamic-nabil-introduction')">مدخل التزكية</button>
-                    <button class="btn" onclick="startQuiz('islamic-nabil-justice')">القسط والحكمة</button>
-                    <button class="btn" onclick="startQuiz('islamic-nabil-respond')">مدخل الاستجابة</button>
-                    <button class="btn" onclick="startQuiz('islamic-nabil-imitating')">مدخل الاقتداء</button>
-                </div>
-            </div>
+       <!-- مادة التربية الإسلامية -->
+<div class="subject">
+    <i class="fas fa-mosque fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للمسجد للتربية الإسلامية -->
+    <h3>التربية الإسلامية</h3>
+<button class="btn" onclick="toggleTeacherChoice('islamic')" style="background-color: #00aaff;">ابدأ الاختبار</button>
+<div id="teacher-choice-islamic" style="display:none;">
+    <button class="btn" onclick="showOptions('islamic-hakim')" style="background-color: #00aaff;">أستاذ حكيم عاطف</button>
+    <button class="btn" onclick="showOptions('islamic-nabil')" style="background-color: #00aaff;">أستاذ نبيل حمدوش</button>
+</div>
+<div id="teacher-options-islamic-hakim" style="display:none;">
+    <button class="btn" onclick="startQuiz('islamic-hakim-introduction')" style="background-color: #00aaff;">مدخل التزكية</button>
+    <button class="btn" onclick="startQuiz('islamic-hakim-imitating')" style="background-color: #00aaff;">مدخل الاقتداء</button>
+    <button class="btn" onclick="startQuiz('islamic-hakim-response')" style="background-color: #00aaff;">مدخل الاستجابة</button>
+    <button class="btn" onclick="startQuiz('islamic-hakim-wisdom')" style="background-color: #00aaff;">مدخل الحكمة والقسط</button>
+</div>
+<div id="teacher-options-islamic-nabil" style="display:none;">
+    <button class="btn" onclick="startQuiz('islamic-nabil-introduction')" style="background-color: #00aaff;">مدخل التزكية</button>
+    <button class="btn" onclick="startQuiz('islamic-nabil-justice')" style="background-color: #00aaff;">القسط والحكمة</button>
+    <button class="btn" onclick="startQuiz('islamic-nabil-respond')" style="background-color: #00aaff;">مدخل الاستجابة</button>
+    <button class="btn" onclick="startQuiz('islamic-nabil-imitating')" style="background-color: #00aaff;">مدخل الاقتداء</button>
+</div>
+</div>
 
-            <!-- مادة اللغة العربية -->
-            <div class="subject">
-                <h3>اللغة العربية</h3>
-                <button class="btn" onclick="toggleTeacherChoice('arabic')">ابدأ الاختبار</button>
-                <div id="teacher-choice-arabic" style="display:none;">
-                    <button class="btn" onclick="showOptions('arabic-aisha')">أستاذة عائشة</button>
-                    <button class="btn" onclick="showOptions('arabic-fatima')">أستاذة فاطمة</button>
-                </div>
-                <div id="teacher-options-arabic-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('arabic-aisha-science')">علوم اللغة</button>
-                </div>
-                <div id="teacher-options-arabic-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('arabic-fatima-literature')">الأدب العربي</button>
-                </div>
-            </div>
+<!-- مادة اللغة العربية -->
+<div class="subject">
+    <i class="fas fa-book fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للغة العربية -->
+    <h3>اللغة العربية</h3>
+    <button class="btn" onclick="toggleTeacherChoice('arabic')" style="background-color: #00aaff;">ابدأ الاختبار</button>
+    <div id="teacher-choice-arabic" style="display:none;">
+        <button class="btn" onclick="showOptions('arabic-aisha')" style="background-color: #00aaff;">أستاذة عائشة</button>
+        <button class="btn" onclick="showOptions('arabic-fatima')" style="background-color: #00aaff;">أستاذة فاطمة</button>
+    </div>
+    <div id="teacher-options-arabic-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('arabic-aisha-science')" style="background-color: #00aaff;">علوم اللغة</button>
+    </div>
+    <div id="teacher-options-arabic-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('arabic-fatima-literature')" style="background-color: #00aaff;">الأدب العربي</button>
+    </div>
+</div>
 
-            <!-- مادة الاجتماعيات -->
-            <div class="subject">
-                <h3>الاجتماعيات</h3>
-                <button class="btn" onclick="toggleTeacherChoice('social')">ابدأ الاختبار</button>
-                <div id="teacher-choice-social" style="display:none;">
-                    <button class="btn" onclick="showOptions('social-aisha')">أستاذة عائشة</button>
-                    <button class="btn" onclick="showOptions('social-fatima')">أستاذة فاطمة</button>
-                </div>
-                <div id="teacher-options-social-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('social-aisha-history')">تاريخ</button>
-                    <button class="btn" onclick="startQuiz('social-aisha-geography')">جغرافيا</button>
-                </div>
-                <div id="teacher-options-social-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('social-fatima-sociology')">سوسيولوجيا</button>
-                </div>
-            </div>
+<!-- مادة الاجتماعيات -->
+<div class="subject">
+    <i class="fas fa-globe fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للجغرافيا للاجتماعيات -->
+    <h3>الاجتماعيات</h3>
+    <button class="btn" onclick="toggleTeacherChoice('social')" style="background-color: #00aaff;">ابدأ الاختبار</button>
+    <div id="teacher-choice-social" style="display:none;">
+        <button class="btn" onclick="showOptions('social-aisha')" style="background-color: #00aaff;">أستاذة عائشة</button>
+        <button class="btn" onclick="showOptions('social-fatima')" style="background-color: #00aaff;">أستاذة فاطمة</button>
+    </div>
+    <div id="teacher-options-social-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('social-aisha-history')" style="background-color: #00aaff;">تاريخ</button>
+        <button class="btn" onclick="startQuiz('social-aisha-geography')" style="background-color: #00aaff;">جغرافيا</button>
+    </div>
+    <div id="teacher-options-social-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('social-fatima-sociology')" style="background-color: #00aaff;">سوسيولوجيا</button>
+    </div>
+</div>
 
-            <!-- مادة الفرنسية -->
-            <div class="subject">
-                <h3>اللغة الفرنسية</h3>
-                <button class="btn" onclick="toggleTeacherChoice('french')">ابدأ الاختبار</button>
-                <div id="teacher-choice-french" style="display:none;">
-                    <button class="btn" onclick="showOptions('french-aisha')">أستاذة عائشة</button>
-                    <button class="btn" onclick="showOptions('french-fatima')">أستاذة فاطمة</button>
-                </div>
-                <div id="teacher-options-french-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('french-aisha-vocabulary')">مفردات</button>
-                    <button class="btn" onclick="startQuiz('french-aisha-conjugation')">تصريف الأفعال</button>
-                </div>
-                <div id="teacher-options-french-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('french-fatima-comprehension')">فهم النصوص</button>
-                </div>
-            </div>
+<!-- مادة الفرنسية -->
+<div class="subject">
+    <i class="fas fa-language fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للغة الفرنسية -->
+    <h3>اللغة الفرنسية</h3>
+    <button class="btn" onclick="toggleTeacherChoice('french')" style="background-color: #00aaff;">ابدأ الاختبار</button>
+    <div id="teacher-choice-french" style="display:none;">
+        <button class="btn" onclick="showOptions('french-aisha')" style="background-color: #00aaff;">أستاذة عائشة</button>
+        <button class="btn" onclick="showOptions('french-fatima')" style="background-color: #00aaff;">أستاذة فاطمة</button>
+    </div>
+    <div id="teacher-options-french-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('french-aisha-vocabulary')" style="background-color: #00aaff;">مفردات</button>
+        <button class="btn" onclick="startQuiz('french-aisha-conjugation')" style="background-color: #00aaff;">تصريف الأفعال</button>
+    </div>
+    <div id="teacher-options-french-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('french-fatima-comprehension')" style="background-color: #00aaff;">فهم النصوص</button>
+    </div>
+</div>
         </div>
     </div>
 </section>
