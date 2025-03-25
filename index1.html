@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الثانوية التأهيلية عمر المختار</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
     /* تحسين تصميم الخلفية */
 body {
@@ -392,53 +393,56 @@ nav ul li a:hover {
            
             <!-- امادة الفلسفة -->
             <div class="subject">
-                <h3>الفلسفة</h3>
-                <button class="btn" onclick="toggleTeacherChoice('arabic')">ابدأ الاختبار</button>
-                <div id="teacher-choice-arabic" style="display:none;">
-                    <button class="btn" onclick="showOptions('arabic-aisha')">الاستادة مريم الدريعي</button>
-                    <button class="btn" onclick="showOptions('arabic-fatima')">الاستاد رقم اثنان</button>
-                </div>
-                <div id="teacher-options-arabic-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('arabic-aisha-science')">المجزوؤة رقم واحد</button>
-                </div>
-                <div id="teacher-options-arabic-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('arabic-fatima-literature')">المجزوؤة رقم اثنان</button>
-                </div>
-            </div>
+    <i class="fas fa-brain fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للفلسفة -->
+    <h3>الفلسفة</h3>
+    <button class="btn" onclick="toggleTeacherChoice('arabic')">ابدأ الاختبار</button>
+    <div id="teacher-choice-arabic" style="display:none;">
+        <button class="btn" onclick="showOptions('arabic-aisha')">الاستادة مريم الدريعي</button>
+        <button class="btn" onclick="showOptions('arabic-fatima')">الاستاد رقم اثنان</button>
+    </div>
+    <div id="teacher-options-arabic-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('arabic-aisha-science')">المجزوؤة رقم واحد</button>
+    </div>
+    <div id="teacher-options-arabic-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('arabic-fatima-literature')">المجزوؤة رقم اثنان</button>
+    </div>
+</div>
 
-            <!-- الانجليزية  -->
-            <div class="subject">
-                <h3>الانجليزية</h3>
-                <button class="btn" onclick="toggleTeacherChoice('social')">ابدأ الاختبار</button>
-                <div id="teacher-choice-social" style="display:none;">
-                    <button class="btn" onclick="showOptions('social-aisha')">الأستاد عبد الاله المرجي</button>
-                    <button class="btn" onclick="showOptions('social-fatima')">استاد رقم اثنان</button>
-                </div>
-                <div id="teacher-options-social-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('social-aisha-history')">الوحدة رقم واحد</button>
-                    <button class="btn" onclick="startQuiz('social-aisha-geography')">الوحدة رقم اثنان</button>
-                </div>
-                <div id="teacher-options-social-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('social-fatima-sociology')">سوسيولوجيا</button>
-                </div>
-            </div>
+<!-- مادة اللغة الإنجليزية -->
+<div class="subject">
+    <i class="fas fa-language fa-3x" style="color: #00aaff;"></i> <!-- أيقونة للإنجليزية -->
+    <h3>الانجليزية</h3>
+    <button class="btn" onclick="toggleTeacherChoice('social')">ابدأ الاختبار</button>
+    <div id="teacher-choice-social" style="display:none;">
+        <button class="btn" onclick="showOptions('social-aisha')">الأستاد عبد الاله المرجي</button>
+        <button class="btn" onclick="showOptions('social-fatima')">استاد رقم اثنان</button>
+    </div>
+    <div id="teacher-options-social-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('social-aisha-history')">الوحدة رقم واحد</button>
+        <button class="btn" onclick="startQuiz('social-aisha-geography')">الوحدة رقم اثنان</button>
+    </div>
+    <div id="teacher-options-social-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('social-fatima-sociology')">سوسيولوجيا</button>
+    </div>
+</div>
 
-            <!--علوم الحياة والارض  -->
-            <div class="subject">
-                <h3>علوم الحياة والأرض </h3>
-                <button class="btn" onclick="toggleTeacherChoice('french')">ابدأ الاختبار</button>
-                <div id="teacher-choice-french" style="display:none;">
-                    <button class="btn" onclick="showOptions('french-aisha')">الاستاد رقم واحد</button>
-                    <button class="btn" onclick="showOptions('french-fatima')">الاستاد رقم اثنان</button>
-                </div>
-                <div id="teacher-options-french-aisha" style="display:none;">
-                    <button class="btn" onclick="startQuiz('french-aisha-vocabulary')">الوحدة الاولى </button>
-                    <button class="btn" onclick="startQuiz('french-aisha-conjugation')">الوحدة الثانية </button>
-                </div>
-                <div id="teacher-options-french-fatima" style="display:none;">
-                    <button class="btn" onclick="startQuiz('french-fatima-comprehension')">اسم قابل لتعديل</button>
-                </div>
-            </div>
+<!-- مادة علوم الحياة والأرض -->
+<div class="subject">
+    <i class="fas fa-leaf fa-3x" style="color: #00aaff;"></i> <!-- أيقونة لعلوم الحياة والأرض -->
+    <h3>علوم الحياة والأرض</h3>
+    <button class="btn" onclick="toggleTeacherChoice('french')">ابدأ الاختبار</button>
+    <div id="teacher-choice-french" style="display:none;">
+        <button class="btn" onclick="showOptions('french-aisha')">الاستاد رقم واحد</button>
+        <button class="btn" onclick="showOptions('french-fatima')">الاستاد رقم اثنان</button>
+    </div>
+    <div id="teacher-options-french-aisha" style="display:none;">
+        <button class="btn" onclick="startQuiz('french-aisha-vocabulary')">الوحدة الاولى</button>
+        <button class="btn" onclick="startQuiz('french-aisha-conjugation')">الوحدة الثانية</button>
+    </div>
+    <div id="teacher-options-french-fatima" style="display:none;">
+        <button class="btn" onclick="startQuiz('french-fatima-comprehension')">اسم قابل لتعديل</button>
+    </div>
+</div>
         </div>
     </div>
 </section>
