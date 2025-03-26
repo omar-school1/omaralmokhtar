@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دروس ثانية بكالوريا </title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-       body {
+      body /* الجزء الأول */
+/* الجزء الأول */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
     font-family: 'Tajawal', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right,#11998e, #38ef7d); /* تدرج الألوان من الأبيض إلى البرتقالي الفاتح */
-    color: #444;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #6ec6ff;
     text-align: center;
     animation: fadeInPage 1s forwards;
 }
@@ -22,7 +32,7 @@
 }
 
 header {
-    background-color: #2c3e50; /* لون أزرق غامق */
+    background-color: #6ec6ff;
     color: white;
     padding: 15px;
     font-size: 1.5rem;
@@ -48,7 +58,7 @@ header {
 }
 
 .menu a {
-    background: #1976d2; /* لون أزرق متوسط */
+    background: #1976d2;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -57,7 +67,7 @@ header {
 }
 
 .menu a:hover {
-    background: #ff9800; /* لون برتقالي */
+    background: #ff9800;
     transform: scale(1.05);
 }
 
@@ -85,7 +95,7 @@ header {
 }
 
 .subject {
-    background: #ffffff; /* خلفية بيضاء */
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -96,7 +106,7 @@ header {
 .subject:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ffecb3; /* لون برتقالي فاتح عند التفاعل */
+    background-color: #ffecb3;
 }
 
 .subject-content {
@@ -106,7 +116,7 @@ header {
 
 .btn {
     display: block;
-    background: #ff9800; /* لون برتقالي */
+    background: #ff9800;
     color: white;
     padding: 10px;
     text-decoration: none;
@@ -116,16 +126,16 @@ header {
 }
 
 .btn:hover {
-    background: #e65100; /* لون برتقالي غامق */
+    background: #e65100;
 }
 
 .back-btn {
-    background: #d32f2f; /* لون أحمر غامق */
+    background: #d32f2f;
 }
 
 h3 {
     margin-top: 20px;
-    color: #1565c0; /* لون أزرق غامق */
+    color: #1565c0;
     animation: slideIn 1s ease-out;
 }
 
@@ -140,18 +150,18 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: #1565c0; /* لون أزرق غامق */
+    color: #1565c0;
     transition: color 0.3s ease;
 }
 
 ul li a:hover {
-    color: #ff9800; /* اللون البرتقالي عند التفاعل */
+    color: #ff9800;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #1565c0; /* نفس اللون الأزرق الغامق */
+    background: #1565c0;
     margin: 30px 0;
 }
 
@@ -162,6 +172,207 @@ hr {
     .subjects {
         grid-template-columns: 1fr;
     }
+}
+
+/* الجزء الثاني */
+
+.dark-mode {
+    background: #6ec6ff;
+    color: #e2e8f0;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+}
+
+.dark-mode .subject {
+    background: #2d3748;
+    border-color: #4a5568;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.dark-mode .subject:hover {
+    background: #3a4a63;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.dark-mode .subject h3 {
+    color: #e2e8f0;
+}
+
+.dark-mode .subject i {
+    color: #63b3ed;
+}
+
+.dark-mode .btn {
+    background: #4299e1;
+}
+
+.dark-mode .btn:hover {
+    background: #3182ce;
+    box-shadow: 0 4px 15px rgba(66,153,225,0.2);
+}
+
+body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    line-height: 1.6;
+    background: #e8f4ff;
+}
+
+.subject {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(100,181,246,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #bbdefb;
+}
+
+.subject:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(100,181,246,0.2);
+    background: #f8fbff;
+}
+
+.subject i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #42a5f5;
+}
+
+.subject h3 {
+    color: #1976d2;
+    margin: 1rem 0;
+}
+
+header {
+    background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.btn {
+    background: #42a5f5;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(66,165,245,0.3);
+}
+
+.back-btn {
+    background: #ef5350;
+}
+
+.back-btn:hover {
+    background: #e53935;
+}
+
+header {
+    background: #6ec6ff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+nav a:hover {
+    background: #555;
+    border-radius: 3px;
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #6ec6ff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    margin: 12px 0;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    color: #1976d2;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(25,118,210,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.1em;
+}
+
+ul li a:hover {
+    background: #e3f2fd;
+    color: #1565c0;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(25,118,210,0.2);
+}
+
+ul li a::before {
+    content: '📚';
+    margin-left: 10px;
+    opacity: 0.7;
+}
+
+.details h3 {
+    font-size: 1.8em;
+    color: #1976d2;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #bbdefb;
+    text-align: center;
+}
+
+.dark-mode ul li a {
+    background: #2d3748;
+    color: #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dark-mode ul li a:hover {
+    background: #3a4a63;
+    color: #63b3ed;
 }
     </style>
 
@@ -219,30 +430,39 @@ hr {
         <h2>اختر المادة</h2>
         <div class="subjects">
             <div class="subject" onclick="showContent('arabic')">
+                <i class="fas fa-book-open"></i>
                 <h3>اللغة العربية</h3>
             </div>
             <div class="subject" onclick="showContent('islamic')">
+                <i class="fas fa-mosque"></i>
                 <h3>التربية الإسلامية</h3>
             </div>
             <div class="subject" onclick="showContent('french')">
+                <i class="fas fa-language"></i>
                 <h3>اللغة الفرنسية</h3>
             </div>
             <div class="subject" onclick="showContent('english')">
+                <i class="fas fa-globe-americas"></i>
                 <h3>اللغة الإنجليزية</h3>
             </div>
             <div class="subject" onclick="showContent('history')">
+                <i class="fas fa-landmark"></i>
                 <h3>الاجتماعيات</h3>
             </div>
             <div class="subject" onclick="showContent('philosophy')">
+                <i class="fas fa-brain"></i>
                 <h3>الفلسفة</h3>
             </div>
             <div class="subject" onclick="showContent('biology')">
+                <i class="fas fa-dna"></i>
                 <h3>علوم الحياة والأرض</h3>
             </div>
             <div class="subject" onclick="showContent('physics')">
+                <i class="fas fa-atom"></i>
                 <h3>الفيزياء</h3>
             </div>
             <div class="subject" onclick="showContent('math')">
+                <i class="fas fa-square-root-alt"></i>
                 <h3>الرياضيات</h3>
             </div>
         </div>
